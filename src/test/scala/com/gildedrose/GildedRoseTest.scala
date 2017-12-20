@@ -70,7 +70,7 @@ class GildedRoseTest extends FlatSpec with Matchers {
     item.quality shouldBe 50
   }
 
-  it should "[Sulfuras] does not change quality neither sellIn" in {
+  it should "[Sulfuras] has always 80 in quality and never update sellIn" in {
     val item = new Item("Sulfuras, Hand of Ragnaros", 123, 50)
     val items = Array[Item](item)
     val app = new GildedRose(items)
@@ -78,7 +78,7 @@ class GildedRoseTest extends FlatSpec with Matchers {
     app.updateQuality()
 
     item.sellIn shouldBe 123
-    item.quality shouldBe 50
+    item.quality shouldBe 80
   }
 
   it should "[BackstagePass] does not change quality when sellIn is higher than 10" in {
